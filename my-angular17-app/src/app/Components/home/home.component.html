@@ -1,3 +1,9 @@
 <!-- Interpolation or Pagination -->
 <h1>{{myStore.name}}</h1>
-<img src="{{myStore.imageUrl}}" alt="Sorry">
+<!-- <img src="{{myStore.imageUrl}}" alt="Sorry"> -->
+
+
+<!-- Property binding -->
+<img [src]="myStore.imageUrl" alt="Sorry"/>
+
+<h3 *ngFor="let branch of myStore.branches" >{{branch}}</h3>
