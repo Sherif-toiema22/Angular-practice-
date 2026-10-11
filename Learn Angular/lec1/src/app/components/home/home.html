@@ -1,0 +1,5 @@
+<h1>{{ myStores.name }}</h1>
+<img [src]="myStores.imgUrl" [alt]="myStores.name">
+<ul>
+  <li *ngFor="let branch of myStores.branches">{{ branch }}</li>
+</ul>
