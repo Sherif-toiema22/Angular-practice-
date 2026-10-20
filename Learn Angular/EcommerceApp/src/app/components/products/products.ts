@@ -9,6 +9,7 @@ import { IProduct } from '../../models/i-product';
   templateUrl: './products.html',
 })
 export class Products {
+  totalPrice: number = 0;
   products: IProduct[] = [
     {
         id: 1,
@@ -35,4 +36,9 @@ export class Products {
         imageUrl: 'https://placehold.co/600x400?text=Product+3',
     },
   ];
+
+  buyProduct(count: number, price: number) {
+    this.totalPrice += +count * price;
+   
+  }
 }

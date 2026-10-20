@@ -1,3 +1,5 @@
+<h1 class="text-center my-5">منتجاتنا</h1>
+<h1 class="text-center my-5">السعر الإجمالي: {{ totalPrice | currency:'USD' }}</h1>
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-4 g-4">
 
@@ -12,7 +14,11 @@
             <p class="card-text text-muted">{{product.description}}</p>
             <p class="card-text fw-bold text-success">السعر: {{product.price | currency:'USD'}}</p>
             <p class="card-text fw-bold text-info">الكمية: {{product.quantity}}</p>
-          <a href="#" class="btn btn-outline-primary mt-3">شراء الآن</a>
+
+            <input type="number" class="form-control mb-3" #countInp min="1" max="10" placeholder="الكمية">
+            <button class="btn btn-outline-primary mt-3" (click)="buyProduct(countInp.valueAsNumber, product.price)">إضافة إلى السلة</button>
+          
+            <a href="#" class="btn btn-outline-primary mt-3">شراء الآن</a>
 
 
         </div>
