@@ -3,7 +3,14 @@
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-4 g-4">
 
+    <div class="col-12 mb-4">
+      <label for="categorySelect" class="form-label">اختر الفئة:</label>
+      <select id="categorySelect" class="form-select" [(ngModel)]="selectedCatId" (change)="change()">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
     <!-- البطاقة الأولى -->
+     </div>
+     <button (click)="change()">change category</button>
     <div class="col" *ngFor="let product of products">
 
       <div class="card h-100 border-0 shadow">
